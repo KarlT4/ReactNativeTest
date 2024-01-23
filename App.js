@@ -1,14 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Paina nappia testaaksesi alerttia!</Text>
+      <Button onPress={buttonPressed} title="Nappi" />
       <StatusBar style="auto" />
     </View>
   );
 }
+
+const buttonPressed = () => {
+  Alert.alert("Nappi painettu :)");
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -16,5 +21,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 100,
   },
 });
